@@ -16,5 +16,5 @@
         </div>
     </div>
 
-    PAGINA DE DETALHES DO FILME DO STREAMER
+    HOMEPAGE DO ADMIN
 @endsection

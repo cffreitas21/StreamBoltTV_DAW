@@ -1,0 +1,48 @@
+.top-bar-box {
+    margin: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+    color: black;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.name-topbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem; /* larger title */
+    font-weight: 700;
+    color: inherit;
+}
+.icon-play {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    display: inline-block;
+}
+.icon-play svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.top-bar-spacer { flex: 1; }
+
+.iconletter {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: dodgerblue;
+    font-weight: 600;
+}
+
+
+
+
