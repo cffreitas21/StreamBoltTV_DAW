@@ -41,6 +41,61 @@
     border-radius: 50%;
     background: dodgerblue;
     font-weight: 600;
+    color: white;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+button[type="submit"] {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+button[type="submit"]:hover {
+    background: #e5e5e5;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.footer__brand {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer__logo {
+    font-size: 1.1rem;
+}
+
+.footer__owners {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.footer__contacts {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.footer__contacts-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.footer__contact-link {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.footer__contact-link:hover {
+    text-decoration: underline;
 }
 
 

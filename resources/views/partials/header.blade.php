@@ -11,16 +11,17 @@
                 </svg>
                 <span class="title">StreamBoltTV</span>
             </span>
-            @if(!empty(trim($username ?? '')))
-                    <span class="iconletter" aria-hidden="true">
-                    {{ strtoupper(mb_substr($username, 0, 1)) ?: '?' }}
-                     </span>
-                    <span class="user-name">{{ $username }}</span>
-                    <form method="POST" action="{{ route('logout') }}" style="display:inline;">
-                        @csrf
-                        <button type="submit">Terminar Sessão</button>
-                    </form>
-            @endif
+            <div class="top-bar-spacer"></div>
+            @auth
+                <span class="iconletter" aria-hidden="true">
+                    {{ strtoupper(mb_substr(Auth::user()->name, 0, 1)) }}
+                </span>
+                <span class="user-name">{{ Auth::user()->name }}</span>
+                <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                    @csrf
+                    <button type="submit">Terminar Sessão</button>
+                </form>
+            @endauth
         </div>
     </div>
 </header>

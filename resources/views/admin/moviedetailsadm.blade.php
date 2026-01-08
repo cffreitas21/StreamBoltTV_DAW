@@ -14,7 +14,9 @@
                 <button type="submit" class="nb-submit"
                         onclick="window.location.href='{{ url('/homepageadm') }}'">
                     Aprovação de Avaliações</button>
-                <button>Estatísticas</button>
+                <button type="submit" class="nb-submit"
+                        onclick="window.location.href='{{ url('/analytics') }}'">
+                    Estatísticas</button>
             </div>
 
             <div class="top-bar-spacer" style="flex:1;"></div>

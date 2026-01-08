@@ -104,6 +104,21 @@
 }
 
 /* submit button */
+.nb-submit {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: black;
+    transition: all 0.2s;
+    line-height: 1.2;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .nb-submit:hover{ filter:brightness(.98) }
 
 /* signup line */
@@ -125,6 +140,54 @@
     border: 0 !important;
 }
 
+/* Analytics page styles */
+.analytics-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.analytics-title {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: black;
+    font-size: 28px;
+}
+
+.table-section {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.analytics-table th {
+    background: #f8f9fa;
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #dee2e6;
+    font-size: 14px;
+}
+
+.analytics-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #dee2e6;
+    color: #333;
+    font-size: 14px;
+}
+
+.analytics-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
 /* responsive */
 @media (max-width:480px){
     .nb-login-card{ padding:32px 20px; border-radius:6px }
@@ -132,5 +195,13 @@
     .nb-heading{ font-size:22px }
 }
 
-
-
+@media (max-width: 768px) {
+    .analytics-table {
+        font-size: 12px;
+    }
+    
+    .analytics-table th,
+    .analytics-table td {
+        padding: 10px 8px;
+    }
+}
