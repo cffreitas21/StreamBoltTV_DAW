@@ -89,6 +89,7 @@
                     <option value="Crime">Crime</option>
                     <option value="Documentário">Documentário</option>
                     <option value="Drama">Drama</option>
+                    <option value="Drama">Drama e Crime</option>
                     <option value="Família">Família</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="História">História</option>
