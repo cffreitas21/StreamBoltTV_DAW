@@ -14,16 +14,10 @@ class Movie extends Model
         'genre',
         'vote_average',
         'overview',
-        'created_by',
     ];
 
     public function comments()
     {
         return $this->hasMany(Comment::class);
-    }
-
-    public function creator()
-    {
-        return $this->belongsTo(User::class, 'created_by');
     }
 }

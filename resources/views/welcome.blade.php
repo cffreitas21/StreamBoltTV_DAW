@@ -23,6 +23,13 @@
         .meta p { margin:4px 0; font-size:.9rem; color:#555 }
         footer { border-top:1px solid #eee; padding:12px 0; margin-top:18px; font-size:.9rem; color:#666 }
         .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0 }
+        .search-bar-container { display:flex; justify-content:space-between; align-items:center; margin:14px 0; }
+        .welcome-title { margin:0 0 12px }
+        .footer-content { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px }
+        .footer-brand { font-weight:700 }
+        .footer-credits { font-size:.9rem; color:#666 }
+        .footer-contacts { text-align:right }
+        .footer-copyright { margin-top:10px; color:#999 }
     </style>
 </head>
 <body>
@@ -47,7 +54,7 @@
         </div>
     </header>
 
-    <div style="display:flex; justify-content:space-between; align-items:center; margin:14px 0;">
+    <div class="search-bar-container">
         <div></div>
         <div>
             <label for="search" class="visually-hidden">Pesquisar filmes</label>
@@ -57,7 +64,7 @@
     </div>
 
     <main role="main">
-        <h2 style="margin:0 0 12px">Filmes Recomendados</h2>
+        <h2 class="welcome-title">Filmes Recomendados</h2>
 
         <div class="grid" aria-live="polite">
             <article class="card" role="button" tabindex="0" aria-label="Ver detalhes de Example Movie">
@@ -85,18 +92,18 @@
     </main>
 
     <footer role="contentinfo" aria-label="Footer information">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div class="footer-content">
             <div>
-                <div style="font-weight:700">StreamBolt TV</div>
-                <div style="font-size:.9rem;color:#666">by Carlos Freitas &amp; Ângelo Teresa</div>
+                <div class="footer-brand">StreamBolt TV</div>
+                <div class="footer-credits">by Carlos Freitas &amp; Ângelo Teresa</div>
             </div>
-            <div style="text-align:right">
+            <div class="footer-contacts">
                 <div>Contacts:</div>
                 <div><a href="mailto:25959@stu.ipbeja.pt">25959@stu.ipbeja.pt</a></div>
                 <div><a href="mailto:25441@stu.ipbeja.pt">25441@stu.ipbeja.pt</a></div>
             </div>
         </div>
-        <div style="margin-top:10px;color:#999">&copy; {{ now()->year }} StreamBolt TV. All rights reserved.</div>
+        <div class="footer-copyright">&copy; {{ now()->year }} StreamBolt TV. All rights reserved.</div>
     </footer>
 </div>
 </body>

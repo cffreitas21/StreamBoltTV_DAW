@@ -20,9 +20,11 @@
             </div>
         </div>
     </div>
+   
     <div class="center-title">
         <h1>Estatísticas dos Streamers</h1>
     </div>
+    
     <div class="analytics-container">
         <div class="table-section">
             <table class="analytics-table">
@@ -48,7 +50,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" style="text-align: center; padding: 40px; color: #999;">
+                            <td colspan="6" class="analytics-empty-state">
                                 Nenhum dado de streamers disponível
                             </td>
                         </tr>

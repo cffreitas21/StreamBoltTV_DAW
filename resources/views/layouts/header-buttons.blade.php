@@ -4,7 +4,7 @@
             <button></button>
         </div>
 
-        <div class="top-bar-spacer" style="flex:1;"></div>
+        <div class="top-bar-spacer"></div>
 
     </div>
 </div>

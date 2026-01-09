@@ -30,7 +30,13 @@
     height: 100%;
     display: block;
 }
-.top-bar-spacer { flex: 1; }
+.top-bar-spacer { 
+    flex: 1; 
+}
+
+.search-container {
+    position: relative;
+}
 
 .iconletter {
     display: inline-flex;
@@ -123,6 +129,253 @@
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
+}
+
+/** PAGINA INICIAL DO STREAMER**/
+
+.movies-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .loading, .error-message, .no-movies {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .movie-card {
+            background: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 270px;
+            background: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .movie-poster-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 10px;
+        }
+
+        .movie-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .movie-genre {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+/** PAGINA DE DETALHES DO FILME **/
+
+.center-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.loading-text {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+}
+
+.movie-details {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.movie-details .movie-poster {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.no-poster {
+    width: 300px;
+    height: 450px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-details .movie-info {
+    flex: 1;
+    padding: 0;
+}
+
+.movie-details .movie-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.movie-details .movie-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.movie-details .movie-meta {
+    display: block;
+    margin: 15px 0;
+}
+
+.movie-meta-item {
+    margin: 5px 0;
+}
+
+.movie-rating {
+    margin-top: 20px;
+}
+
+.star {
+    color: #f39c12;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.rating-value {
+    margin-left: 10px;
+    color: #666;
+}
+
+.comment-form {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    resize: vertical;
+    margin: 10px 0;
+}
+
+.submit-btn-comment {
+    padding: 10px 20px;
+    background: dodgerblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.user-reviews {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.user-reviews h2 {
+    margin-bottom: 20px;
+}
+
+.review-card {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.review-card:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.review-date {
+    color: #999;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.review-content {
+    line-height: 1.6;
+}
+
+.delete-btn {
+    margin-left: auto;
+    padding: 5px 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.icon-letra {
+    width: 40px;
+    height: 40px;
+    background: dodgerblue;
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 /* responsive */

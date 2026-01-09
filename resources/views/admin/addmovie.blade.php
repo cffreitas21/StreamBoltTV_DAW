@@ -16,14 +16,16 @@
                     Estatísticas</button>
             </div>
 
-            <div class="top-bar-spacer" style="flex:1;"></div>
+            <div class="top-bar-spacer"></div>
         </div>
     </div>
 
     <div class="form-container">
         <h2 class="form-title">Adicionar Filme</h2>
         
-        <form class="add-movie-form" aria-label="Adicionar Filme">
+        <div id="message"></div>
+        
+        <form id="addMovieForm" class="add-movie-form" aria-label="Adicionar Filme">
             <div>
                 <label for="title" class="visually-hidden">Título do filme</label>
                 <input
@@ -41,8 +43,7 @@
                     id="poster_path"
                     name="poster_path"
                     type="file"
-                    accept="image/png"
-                    required
+                    accept="image/png,image/jpeg,image/jpg,image/gif"
                 />
             </div>
 
@@ -74,7 +75,7 @@
                 <select
                     id="genre_ids"
                     class="genre-input"
-                    name="genre_ids"
+                    name="genre"
                     required
                     aria-label="Selecionar Género"
                 >
@@ -132,74 +133,59 @@
         </form>
     </div>
 
-    <style>
-        .form-container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .form-title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .add-movie-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .add-movie-form input,
-        .add-movie-form select,
-        .add-movie-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-
-        .add-movie-form textarea {
-            resize: vertical;
-            font-family: inherit;
-        }
-
-        .add-movie-form input[type="file"] {
-            padding: 8px;
-        }
-
-        .submit-button {
-            padding: 12px 24px;
-            background: dodgerblue;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .submit-button:hover {
-            background: #1e90ff;
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-    </style>
+    <script>
+        document.getElementById('addMovieForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append('title', document.getElementById('title').value);
+            formData.append('release_date', document.getElementById('release_date').value);
+            formData.append('original_language', document.getElementById('original_language').value);
+            formData.append('genre', document.getElementById('genre_ids').value);
+            formData.append('vote_average', document.getElementById('vote_average').value);
+            formData.append('overview', document.getElementById('overview').value);
+            
+            const posterFile = document.getElementById('poster_path').files[0];
+            if (posterFile) {
+                formData.append('poster_path', posterFile);
+            }
+            
+            const messageDiv = document.getElementById('message');
+            
+            try {
+                const response = await fetch('/api/movies', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.background = '#d4edda';
+                    messageDiv.style.color = '#155724';
+                    messageDiv.textContent = 'Filme adicionado com sucesso!';
+                    document.getElementById('addMovieForm').reset();
+                    
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 3000);
+                } else {
+                    messageDiv.style.display = 'block';
+                    messageDiv.style.background = '#f8d7da';
+                    messageDiv.style.color = '#721c24';
+                    messageDiv.textContent = 'Erro: ' + (data.errors ? Object.values(data.errors).flat().join(', ') : 'Erro ao adicionar filme');
+                }
+            } catch (error) {
+                messageDiv.style.display = 'block';
+                messageDiv.style.background = '#f8d7da';
+                messageDiv.style.color = '#721c24';
+                messageDiv.textContent = 'Erro ao conectar com o servidor';
+                console.error('Error:', error);
+            }
+        });
+    </script>
 @endsection

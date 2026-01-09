@@ -17,7 +17,7 @@
                     {{ strtoupper(mb_substr(Auth::user()->name, 0, 1)) }}
                 </span>
                 <span class="user-name">{{ Auth::user()->name }}</span>
-                <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                <form method="POST" action="{{ route('logout') }}" class="logout-form">
                     @csrf
                     <button type="submit">Terminar Sessão</button>
                 </form>
