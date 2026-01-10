@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+    // GET http://localhost:8000/api/comments/pending
     // Retorna lista de comentários pendentes para aprovação (admin)
     public function pending()
     {
@@ -19,6 +20,7 @@ class CommentController extends Controller
         return response()->json($comments);
     }
 
+    // GET http://localhost:8000/api/comments/approved/{movieId}
     // Retorna todos os comentários aprovados de um filme
     public function approved($movieId)
     {
@@ -31,6 +33,7 @@ class CommentController extends Controller
         return response()->json($comments);
     }
 
+    // POST http://localhost:8000/api/comments
     // Cria novo comentário (sempre pendente até aprovação)
     public function store(Request $request)
     {
@@ -78,6 +81,7 @@ class CommentController extends Controller
         file_put_contents($analyticsFile, json_encode($analytics));
     }
 
+    // POST http://localhost:8000/api/comments/{id}/approve
     // Aprova um comentário (admin)
     public function approve($id)
     {
@@ -96,6 +100,7 @@ class CommentController extends Controller
         ]);
     }
 
+    // POST http://localhost:8000/api/comments/{id}/reject
     // Rejeita/apaga um comentário (admin)
     public function reject($id)
     {
@@ -110,6 +115,7 @@ class CommentController extends Controller
         return response()->json(['message' => 'Comentário rejeitado e removido']);
     }
 
+    // DELETE http://localhost:8000/api/comments/{id}
     // Apaga comentário próprio ou qualquer comentário (admin)
     public function destroy($id)
     {

@@ -11,20 +11,16 @@ use App\Helpers\AnalyticsHelper;
 
 class MovieController extends Controller
 {
-    /**
-     * GET /api/movies
-     * Retorna lista de todos os filmes
-     */
+    // GET http://localhost:8000/api/movies
+    // Retorna lista de todos os filmes
     public function index()
     {
         $movies = Movie::latest()->get();
         return response()->json($movies);
     }
 
-    /**
-     * GET /api/movies/search?q={query}
-     * Pesquisa filmes por título (máximo 5 resultados)
-     */
+    // GET http://localhost:8000/api/movies/search?q={query}
+    // Pesquisa filmes por título (máximo 5 resultados)
     public function search(Request $request)
     {
         $query = $request->input('q', '');
@@ -50,10 +46,8 @@ class MovieController extends Controller
     }
 
 
-    /**
-     * POST /api/movies
-     * Cria novo filme com upload de poster
-     */
+    // POST http://localhost:8000/api/movies
+    // Cria novo filme com upload de poster
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -86,10 +80,8 @@ class MovieController extends Controller
         ], 201);
     }
 
-    /**
-     * GET /api/movies/{id}
-     * Retorna detalhes do filme com comentários (apenas aprovados para streamers)
-     */
+    // GET http://localhost:8000/api/movies/{id}
+    // Retorna detalhes do filme com comentários (apenas aprovados para streamers)
     public function show(string $id)
     {
         $movie = Movie::with(['comments' => function($query) {
@@ -107,19 +99,15 @@ class MovieController extends Controller
         return response()->json($movie);
     }
 
-    /**
-     * PUT/PATCH /api/movies/{id}
-     * Atualiza informações do filme
-     */
+    // PUT/PATCH http://localhost:8000/api/movies/{id}
+    // Atualiza informações do filme
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * DELETE /api/movies/{id}
-     * Apaga filme e poster do storage
-     */
+    // DELETE http://localhost:8000/api/movies/{id}
+    // Apaga filme e poster do storage
     public function destroy(string $id)
     {
         $movie = Movie::find($id);
