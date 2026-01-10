@@ -119,6 +119,12 @@
                     
                     const year = movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A';
                     const rating = parseFloat(movie.vote_average).toFixed(1);
+                    const voteAverage = parseFloat(movie.vote_average) || 0;
+                    
+                    // Cria 5 estrelas - preenchidas ou vazias baseado no rating (0-10 convertido para 0-5)
+                    const stars = Array.from({ length: 5 }, (_, i) => 
+                        voteAverage / 2 >= i + 1 ? '★' : '☆'
+                    ).join('');
                     
                     return `
                         <div class="movie-card" onclick="window.location.href='/moviedetails?id=${movie.id}'">
@@ -128,9 +134,10 @@
                             <div class="movie-info">
                                 <div class="movie-title">${movie.title}</div>
                                 <div class="movie-meta">
-                                    <span class="movie-rating">★ ${rating}</span>
-                                    <span class="movie-year">${year}</span>
+                                    <span class="movie-rating-stars">${stars}</span>
+                                    <span class="movie-rating-number">${rating}/10</span>
                                 </div>
+                                <div class="movie-year">${year}</div>
                                 <span class="movie-genre">${movie.genre}</span>
                             </div>
                         </div>

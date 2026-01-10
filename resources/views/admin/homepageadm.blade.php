@@ -146,12 +146,12 @@
                                     ${comment.comment}
                                 </div>
                                 <div class="comment-actions-adm">
-                                    <select class="action-select-adm">
+                                    <select class="action-select-adm" onchange="updateButtonColor(this, ${comment.id})">
                                         <option value="">Selecionar ação</option>
                                         <option value="aprovar">Aprovar</option>
                                         <option value="naoaprovar">Não Aprovar</option>
                                     </select>
-                                    <button class="submit-btn-adm" onclick="handleCommentAction(${comment.id})">Submeter</button>
+                                    <button class="submit-btn-adm" id="submit-btn-${comment.id}" onclick="handleCommentAction(${comment.id})">Submeter</button>
                                 </div>
                             </div>
                             ${posterPath ? `<img src="${posterPath}" alt="Poster" class="movie-poster-adm" />` : ''}
@@ -211,6 +211,23 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadPendingComments();
         });
+
+        // Atualiza a cor do botão baseado na seleção
+        function updateButtonColor(selectElement, commentId) {
+            const button = document.getElementById(`submit-btn-${commentId}`);
+            const selectedValue = selectElement.value;
+            
+            if (selectedValue === 'aprovar') {
+                button.style.backgroundColor = 'green';
+                button.style.color = 'white';
+            } else if (selectedValue === 'naoaprovar') {
+                button.style.backgroundColor = 'red';
+                button.style.color = 'white';
+            } else {
+                button.style.backgroundColor = 'dodgerblue';
+                button.style.color = 'white';
+            }
+        }
 
         // Handler para mudança de seleção no dropdown de ações
         document.addEventListener('change', function(e) {

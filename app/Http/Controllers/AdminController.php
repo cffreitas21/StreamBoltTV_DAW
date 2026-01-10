@@ -57,6 +57,7 @@ class AdminController extends Controller
                     'searches' => 0,
                     'comments' => 0,
                     'last_activity' => null,
+                    'session_count' => 0,
                 ];
             }
             
@@ -68,6 +69,7 @@ class AdminController extends Controller
             switch ($type) {
                 case 'login':
                     $streamers[$userId]['logins']++;
+                    $streamers[$userId]['session_count']++;
                     break;
                 case 'search':
                     $streamers[$userId]['searches']++;
@@ -99,6 +101,10 @@ class AdminController extends Controller
             if ($data['last_activity'] === null) {
                 $streamers[$userId]['last_activity'] = now()->toDateTimeString();
             }
+            
+            // Calcular tempo médio por sessão
+            $sessionCount = $data['session_count'] > 0 ? $data['session_count'] : 1;
+            $streamers[$userId]['avg_time_per_session'] = $data['total_time'] / $sessionCount;
         }
         
         return view('admin.analytics', compact('streamers'));

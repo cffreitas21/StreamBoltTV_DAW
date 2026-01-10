@@ -36,6 +36,15 @@
 
 .search-container {
     position: relative;
+    width: 400px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 .search-dropdown {
@@ -160,6 +169,21 @@
 }
 
 /* submit button */
+.nb-submit {
+    padding: 10px 16px;
+    border: none;
+    background: dodgerblue !important;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: white;
+    transition: all 0.2s;
+    line-height: 1.2;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .nb-submit:hover{ filter:brightness(.98) }
 
 /* signup line */
@@ -238,17 +262,38 @@
         .movie-title {
             font-weight: bold;
             margin-bottom: 5px;
+            font-size: 18px !important;
         }
 
         .movie-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            align-items: center;
+            font-size: 15px;
             color: #666;
+            margin-bottom: 5px;
+        }
+
+        .movie-rating-stars {
+            color: #f39c12;
+            font-size: 18px !important;
+            letter-spacing: 2px;
+        }
+
+        .movie-rating-number {
+            font-size: 15px !important;
+            color: #666;
+            margin-left: 8px;
+            font-weight: 500;
+        }
+
+        .movie-year {
+            font-size: 15px !important;
+            color: #888;
         }
 
         .movie-genre {
-            font-size: 12px;
+            font-size: 15px !important;
             color: #888;
             margin-top: 5px;
         }
@@ -297,7 +342,7 @@
 }
 
 .movie-details .movie-title {
-    font-size: 32px;
+    font-size: 38px !important;
     font-weight: bold;
     margin-bottom: 15px;
 }
@@ -305,6 +350,7 @@
 .movie-details .movie-info p {
     margin: 10px 0;
     line-height: 1.6;
+    font-size: 17px !important;
 }
 
 .movie-details .movie-meta {
@@ -314,6 +360,8 @@
 
 .movie-meta-item {
     margin: 5px 0;
+    color: black;
+    font-size: 17px !important;
 }
 
 .movie-rating {
@@ -348,7 +396,7 @@
 
 .submit-btn-comment {
     padding: 10px 20px;
-    background: dodgerblue;
+    background: green !important;
     color: white;
     border: none;
     cursor: pointer;
@@ -397,7 +445,7 @@
 .delete-btn {
     margin-left: auto;
     padding: 5px 10px;
-    background: #e74c3c;
+    background: red;
     color: white;
     border: none;
     cursor: pointer;

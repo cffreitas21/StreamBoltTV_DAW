@@ -24,7 +24,7 @@
                 flex-direction: column;
                 min-height: 100vh;
                 margin: 0;
-                background-color: cornflowerblue;
+                background-color: slategray;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
             }
@@ -33,14 +33,14 @@
                 position: sticky;
                 top: 0;
                 z-index: 1000;
-                background-color: cornflowerblue;
+                background-color: slategray;
             }
             
             footer {
                 position: sticky;
                 bottom: 0;
                 z-index: 1000;
-                background-color: cornflowerblue;
+                background-color: slategray;
             }
 
             main {
@@ -53,14 +53,8 @@
         @include('partials.header')
         
         <main>
-            <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-                <div>
-                    <a href="/">
-                        <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                    </a>
-                </div>
-
-                <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+            <div class="min-h-screen flex flex-col items-center" style="padding-top: 160px;">
+                <div class="w-full sm:max-w-md px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
                     {{ $slot }}
                 </div>
             </div>

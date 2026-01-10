@@ -3,7 +3,7 @@
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 8px;
-    background: #fff;
+    background: lightgrey !important;
     color: black;
 }
 .top-bar {
@@ -15,21 +15,25 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.25rem; /* larger title */
+    font-size: 1.rem; /* larger title */
     font-weight: 700;
     color: inherit;
 }
-.icon-play {
-    width: 24px;
-    height: 24px;
-    flex: 0 0 24px;
-    display: inline-block;
+
+.title{
+    font-size: 2rem; /* larger title */
+    font-weight: 700;
 }
-.icon-play svg {
-    width: 100%;
-    height: 100%;
+
+.icon-play {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px;
+    min-height: 36px;
+    flex-shrink: 0;
     display: block;
 }
+
 .top-bar-spacer { flex: 1; }
 
 .iconletter {
@@ -45,7 +49,7 @@
 }
 
 .user-name {
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .logout-form {
@@ -55,7 +59,8 @@
 button[type="submit"] {
     padding: 6px 12px;
     border: 1px solid #ddd;
-    background: #f5f5f5;
+    background: red;
+    color: white;
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.9rem;

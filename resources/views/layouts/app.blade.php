@@ -16,7 +16,7 @@
             flex-direction: column;
             min-height: 100vh;
             margin: 0;
-            background-color: cornflowerblue;
+            background-color: slategray;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
