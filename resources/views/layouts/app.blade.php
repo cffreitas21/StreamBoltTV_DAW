@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Projeto')</title>
+    <title>@yield('title', 'StreamBoltTV')</title>
     <link rel="stylesheet" href="{{ file_exists(public_path('mix-manifest.json')) ? mix('css/app.css') : asset('css/app.css') }}">
     <style>
         /* Ensure full-height and make layout a column so footer stays at bottom */
