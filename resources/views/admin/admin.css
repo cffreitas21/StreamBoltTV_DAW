@@ -529,3 +529,145 @@
     color: black;
     font-size: 17px !important;
 }
+
+/* Estilos da página de detalhes do filme */
+.center-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.loading-text {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+}
+
+.movie-details {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.movie-details .movie-poster {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.no-poster {
+    width: 300px;
+    height: 450px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-details .movie-info {
+    flex: 1;
+    padding: 0;
+}
+
+.movie-details .movie-title {
+    font-size: 48px !important;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.movie-details .movie-info p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 17px !important;
+}
+
+.movie-details .movie-meta {
+    display: block;
+    margin: 15px 0;
+}
+
+.comment-form {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    resize: vertical;
+    margin: 10px 0;
+}
+
+.submit-btn-comment {
+    padding: 10px 20px;
+    background: green !important;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.user-reviews {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.user-reviews h2 {
+    margin-bottom: 20px;
+}
+
+.review-card {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.review-card:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.review-date {
+    color: #999;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.review-content {
+    line-height: 1.6;
+}
+
+.delete-btn {
+    margin-left: auto;
+    padding: 5px 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-movie-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}

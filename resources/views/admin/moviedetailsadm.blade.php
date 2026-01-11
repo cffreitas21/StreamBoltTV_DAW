@@ -4,7 +4,6 @@
 @section('content')
     <style>
         {!! file_get_contents(resource_path('views/admin/admin.css')) !!}
-        {!! file_get_contents(resource_path('views/streamer/streamer.css')) !!}
     </style>
 
     <div class="top-bar-box">

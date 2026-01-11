@@ -379,7 +379,7 @@
 }
 
 .movie-details .movie-title {
-    font-size: 32px;
+    font-size: 48px !important;
     font-weight: bold;
     margin-bottom: 15px;
 }
